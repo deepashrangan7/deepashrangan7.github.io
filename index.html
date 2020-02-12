@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  
+
   <div id="map" class="full-map"></div>
   <div id="location" class="marker"><span class="icon-arrow-up"></span></div>
   <script src="assets/ol3/js/ol-debug.js"></script>
@@ -20,7 +20,7 @@
       stroke: new ol.style.Stroke({
         color: 'rgba(0,0,255,1.0)',
         width: 5,
-        lineCap: 'round'
+        lineCap: 'square'
       })
     });
     // use a single feature with a linestring geometry to display our track
@@ -37,7 +37,7 @@
     var baseLayer = new ol.layer.Tile({
       source: new ol.source.OSM()
     });
-    var london = ol.proj.transform([ 76.9558,11.0168], 'EPSG:4326', 'EPSG:3857');
+    var london = ol.proj.transform([76.9558, 11.0168], 'EPSG:4326', 'EPSG:3857');
     var view = new ol.View({
       center: london,
       zoom: 15
