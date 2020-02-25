@@ -2,14 +2,14 @@
 <html>
 
 <head>
-  <title>BUS LIVE TRACKING </title>
+  <title>OpenLayers Components</title>
   <link rel="stylesheet" href="assets/ol3/css/ol.css" type="text/css" />
   <link rel="stylesheet" href="assets/css/samples.css" type="text/css" />
 </head>
 
 <body>
 
-  <div class="full-map" id="map"></div>
+  <div id="map" class="full-map"></div>
 
 
   <div id="overlay" class="marker"><img src="assets/bus.png" class="marker"></div>
@@ -131,7 +131,7 @@
       target: 'map',
       view: new ol.View({
         center: center,
-        zoom: 20
+        zoom: 17
       })
     })
 
@@ -144,11 +144,11 @@
         draw(loc[i][1], loc[i][0]);
         i += 1;
         if (i == 25)
-          alert("BUS REACHED OLUMBUS STOP!!");
-        if (i == 62)
-          alert("BUS REACHED RAMANATHAPURAM!!");
-        if (i == 102){
-         alert("BUS REACHED Sowripalayam Pirivu!!");
+          alert("BUS REACHED OLUMBUS STOP");
+        if (i == 58)
+          alert("BUS REACHED RAMANATHAPURAM");
+        if (i == 102) {
+          alert("BUS REACHED Sowripalaym pirivu");
           clearInterval(inter);
         }
       }
@@ -169,12 +169,18 @@
       var vectorLayer = new ol.layer.Vector({
         source: vectorSource,
       })
-      var center = ol.proj.transform([x, y], 'EPSG:4326', 'EPSG:3857');
+      var center1 = ol.proj.transform([x, y], 'EPSG:4326', 'EPSG:3857');
       var overlay = new ol.Overlay({
-        position: center,
+        position: center1,
         element: document.getElementById('overlay')
       });
+      
+      const view=new ol.View({
+        center: center1,
+        zoom: 20
+      })
       // map.addLayer(vectorLayer)
+      map.setView(view);
       map.addOverlay(overlay);
     }
 
@@ -217,7 +223,7 @@
     //   // view, starting at the center
     //   var view = new ol.View({
     //     center: center,
-    //     zoom: 18
+    //     zoom: 15
     //   });
 
     //   // finally, the map with our custom interactions, controls and overlays
