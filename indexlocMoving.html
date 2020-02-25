@@ -9,7 +9,7 @@
 
 <body>
 
-  <div id="map"></div>
+  <div class="full-map" id="map"></div>
 
 
   <div id="overlay" class="marker"><img src="assets/bus.png" class="marker"></div>
@@ -144,12 +144,13 @@
         draw(loc[i][1], loc[i][0]);
         i += 1;
         if (i == 25)
-          alert("BUS REACHED OLUMBUS STOP");
+          alert("BUS REACHED OLUMBUS STOP!!");
         if (i == 58)
-          alert("BUS REACHED RAMANATHAPURAM");
-        if (i == 102)
+          alert("BUS REACHED RAMANATHAPURAM!!");
+        if (i == 102){
+         alert("BUS REACHED Sowripalayam Pirivu!!");
           clearInterval(inter);
-
+        }
       }
 
         , 300);
